@@ -51,46 +51,34 @@ namespace SistemaLocadoraAmbev
             }
             else if (opcao == 2)
             {
-                alocarVeiculo();
+                AlocarOuDeslocar("alocado");
+            }
+            else if (opcao == 3)
+            {
+                AlocarOuDeslocar("desalocado");
             }
         }
-        /// <summary>
-        /// metodo para iniciar a locação do veiculo
-        /// </summary>
-        private static void alocarVeiculo()
-        {
-            Console.Clear();
-            mostrarBemVindo();
-            Console.WriteLine("Digite o modelo do veiculo que desejas locar: ");
-            string modelo = Console.ReadLine();
-            if (atualizarVeiculo(modelo))
-            {
-                Console.WriteLine("Veiculo locado com sucesso!! ");
-                retornarAoMenu();
-            }
-            else
-            {
-                Console.Clear();
-                mostrarBemVindo();
-                Console.WriteLine("Ops, algo deu errado, não foi possivel encontrar o veiculo desejado ou ele não estava disponivel!");
+
         
-                pegaOpcao();
-            }
-        }
         /// <summary>
         /// método para atualizar o veiculo no arrey
         /// </summary>
         /// <param name="modelo">Modelo digitado pelo usuario</param>
         /// <returns>Retorna se possivel realizar a locação, true para sim e false para não</returns>
-        private static bool atualizarVeiculo(string modelo)
+        private static bool atualizarVeiculo(string modelo,string situacao)
         {
             
 
             for (int i = 0; i < carros.GetLength(0); i++)
             {
-                if (modelo.Equals(carros[i,0]) && carros[i,2] == "Sim")
+                if (modelo.Equals(carros[i,0]) && carros[i,2] == "Sim" && situacao == "alocado")
                 {
                     carros[i, 2] = "Não";
+                    return true;
+                }
+                else if (modelo.Equals(carros[i, 0]) /*&& carros[i, 2] == "Não"*/ && situacao == "desalocado")
+                {
+                    carros[i, 2] = "Sim";
                     return true;
                 }
             }
@@ -129,11 +117,12 @@ namespace SistemaLocadoraAmbev
         {
             Console.WriteLine("Selecione a opção desejada ou pressione qualquer outro botão para sair: " +
                               "\n(1) - visualizar veiculos" +
-                              "\n(2) - Alocar veiculo");
+                              "\n(2) - Alocar veiculo" +
+                              "\n(3) - Desalocar um veiculo");
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
 
             return opcao;
-
+            
         }
         /// <summary>
         /// Metodo para mostrar o menu bem vindo
@@ -143,6 +132,32 @@ namespace SistemaLocadoraAmbev
             Console.WriteLine("====================================================");
             Console.WriteLine("============ Bem vindo a locadora AMBEV ============");
             Console.WriteLine("====================================================");
+        }
+
+        private static string ModeloVeiculoSolicitado(string situacao)
+        {
+            Console.Clear();
+            mostrarBemVindo();
+            Console.WriteLine($"Digite o modelo do veiculo que desejas ser {situacao}: ");
+            return Console.ReadLine();
+        }
+
+        public static void AlocarOuDeslocar(String situacao)
+        {
+            if (atualizarVeiculo(ModeloVeiculoSolicitado(situacao), situacao))
+            {
+                Console.WriteLine($"Veiculo {situacao} com sucesso!! ");
+                retornarAoMenu();
+            }
+            else
+            {
+                Console.Clear();
+                mostrarBemVindo();
+                string frase = situacao == "alocado"? "Ops, algo deu errado, não foi possivel encontrar o veiculo desejado ou ele não estava disponivel!" :
+                                           "Ops, não foi possivel desalocar o veiculo digitado, verifique se esta correto!";
+                Console.WriteLine(frase);
+                pegaOpcao();
+            }
         }
     }
 }
