@@ -71,6 +71,7 @@ namespace SistemaLocadoraAmbev
             else
             {
                 Console.Clear();
+                mostrarBemVindo();
                 Console.WriteLine("Ops, algo deu errado, não foi possivel encontrar o veiculo desejado ou ele não estava disponivel!");
         
                 pegaOpcao();
