@@ -71,12 +71,12 @@ namespace SistemaLocadoraAmbev
 
             for (int i = 0; i < carros.GetLength(0); i++)
             {
-                if (modelo.Equals(carros[i,0]) && carros[i,2] == "Sim" && situacao == "alocado")
+                if (CompararStrings(modelo,carros[i,0]) && carros[i,2] == "Sim" && situacao == "alocado")
                 {
                     carros[i, 2] = "Não";
                     return true;
                 }
-                else if (modelo.Equals(carros[i, 0]) /*&& carros[i, 2] == "Não"*/ && situacao == "desalocado")
+                else if (CompararStrings(modelo, carros[i, 0]) && situacao == "desalocado")
                 {
                     carros[i, 2] = "Sim";
                     return true;
@@ -159,5 +159,11 @@ namespace SistemaLocadoraAmbev
                 pegaOpcao();
             }
         }
+
+        public static bool CompararStrings(string modelo, string modeloBase)
+        {
+            return modelo.ToLower().Replace(" ", "") == modeloBase.ToLower().Replace(" ", "");       
+        }
+
     }
 }
