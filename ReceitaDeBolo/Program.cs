@@ -27,13 +27,7 @@ namespace ReceitaDeBolo
                     "6º Asse em forno médio 180 °C, preaquecido, por aproximadamente 40 minutos\nou ao furar o bolo com um garfo, este saia limpo.",
                     "==================== FIM =++====================="
                     };
-
-            for (int i = 0; i < receita.Length; i++)
-            {
-                Console.ReadKey();
-                Console.WriteLine(receita[i]);
-            }
-
+          
             foreach (var linha in receita)
             {
                 Console.ReadKey();
