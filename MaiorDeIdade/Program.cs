@@ -10,6 +10,8 @@ namespace MaiorDeIdade
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Nome:");
+            Console.ReadLine();
             Console.WriteLine("Digite a idade do usuario: ");
            if (int.Parse(Console.ReadLine()) >= 18)
             {

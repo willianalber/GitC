@@ -30,8 +30,8 @@ namespace ReceitaDeBolo
           
             foreach (var linha in receita)
             {
+                Console.WriteLine(linha);
                 Console.ReadKey();
-                Console.WriteLine(linha);          
             }
 
         }
