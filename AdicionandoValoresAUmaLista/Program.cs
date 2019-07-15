@@ -14,11 +14,7 @@ namespace AdicionandoValoresAUmaLista
 
             int idParaLista = 0;
 
-            InsereRegistro(ref listaDeNome, ref idParaLista);
-
-            Array.Resize(listaDeNome, new string[5, 2]);
-
-           
+            InsereRegistro(ref listaDeNome, ref idParaLista);           
 
             Console.ReadKey();
 
@@ -48,6 +44,8 @@ namespace AdicionandoValoresAUmaLista
                 {
                     break;
                 }
+
+                AumentarTamanhoLista(ref listaDeNome);
 
             }
 
