@@ -145,6 +145,11 @@ go
 insert into Locacao
 (IDCliente,IDCarro,[Data])
 values
+(1,1,'2019/06/01')
+go
+insert into Locacao
+(IDCliente,IDCarro,[Data])
+values
 (1,2,'2018/01/01')
 go
 insert into Locacao
