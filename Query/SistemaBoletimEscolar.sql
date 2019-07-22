@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[Diario]
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [Aluno] int NOT NULL,
 	[Frequencia] INT not null, -- coloquei esse campo como inteiro pois no futuro o sistema possa ser implemenado 0 faltou, 1- presente 3-falta justificada...
-	[Nota] int NOT NULL DEFAULT 0,
+	[Nota] float NOT NULL DEFAULT 0,
 
 	CONSTRAINT [fK_Diario_To_Aluno] FOREIGN KEY ([Aluno]) REFERENCES [dbo].[Alunos]([id])
 	
@@ -180,12 +180,13 @@ go
 select * from Diario
 
 go
-select 
+select
+	Temp.Id,
 	Temp.Aluno, --Retorna o nome do aluno na coluna
 	Temp.Turma, --Retorna a descrição da turma vinculada ao aluno
-	Sum(d.Nota)/count(d.nota) as 'media', -- retorna a média somando todas as notas vinculadas ao aluno e dividindo pela quantidade
+	round(avg(d.Nota),2) as 'media', -- retorna a média somando todas as notas vinculadas ao aluno e dividindo pela quantidade
 	(sum(d.frequencia) * 100)/ count(d.frequencia) as 'frequecia (%)',--Retorna a frequencia somando os valores onde 1 representa presente e 0 que o aluno faltou, 																	 
-	iif (Sum(d.Nota)/count(d.nota) >= 7 and (sum(d.frequencia) * 100)/ count(d.nota) >= 75, 'Aprovado','Reprovado')  as 'Situacao' 
+	iif (avg(d.Nota) >= 7 and (sum(d.frequencia) * 100)/ count(d.nota) >= 75, 'Aprovado','Reprovado')  as 'Situacao' 
 from 
 	(select 
 		al.Id,
@@ -194,5 +195,5 @@ from
 	from Alunos Al 
 		inner join Turmas T on Al.Turma = t.Id) Temp -- Tabela Temp contem o |ID de aluno | nome | Descricao da turma
 	inner join Diario d on Temp.Id = d.Aluno
-Group by temp.Aluno,Temp.Turma
-order by [frequecia (%)] desc
+Group by Temp.Id, temp.Aluno,Temp.Turma
+order by [frequecia (%)] asc
