@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boletim", "Boletim\Boletim.csproj", "{12F0C4EB-3DA3-49AA-B495-8A234ECDF794}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12F0C4EB-3DA3-49AA-B495-8A234ECDF794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F0C4EB-3DA3-49AA-B495-8A234ECDF794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F0C4EB-3DA3-49AA-B495-8A234ECDF794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F0C4EB-3DA3-49AA-B495-8A234ECDF794}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEEDB55E-0D95-4552-B226-825ABFF3F038}
+	EndGlobalSection
+EndGlobal
