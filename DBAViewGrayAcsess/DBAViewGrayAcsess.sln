@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBAViewGrayAcsess", "DBAViewGrayAcsess\DBAViewGrayAcsess.csproj", "{BF727619-CCB2-4804-ACD9-1C05B2CE1154}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF727619-CCB2-4804-ACD9-1C05B2CE1154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF727619-CCB2-4804-ACD9-1C05B2CE1154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF727619-CCB2-4804-ACD9-1C05B2CE1154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF727619-CCB2-4804-ACD9-1C05B2CE1154}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C54CD70-DDF9-4A56-BB48-4CFE5D5C0A73}
+	EndGlobalSection
+EndGlobal
