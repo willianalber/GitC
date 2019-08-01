@@ -26,7 +26,8 @@ namespace FormGrid
 
             txtModelo.Text = CarrosRow.Modelo;
             dtAno.Text = CarrosRow.Ano.ToString("dd/MM/yyyy");
-            cbMarca.SelectedValue = CarrosRow.Marca;           
+            cbMarca.SelectedValue = CarrosRow.Marca;  
+
 
         }
 
@@ -38,6 +39,13 @@ namespace FormGrid
             CarrosRow.Ano = dtAno.Value;
             CarrosRow.Marca = (int)cbMarca.SelectedValue;
 
+
+
+            this.Close();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

@@ -54,6 +54,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BancoDeDadosinnerJoinDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ClasseUsuario.cs" />
+    <Compile Include="frmAlteracaoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlteracaoUsuario.Designer.cs">
+      <DependentUpon>frmAlteracaoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCarros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +72,18 @@
     </Compile>
     <Compile Include="frmEdicaCarros.Designer.cs">
       <DependentUpon>frmEdicaCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdicaoMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdicaoMarcas.Designer.cs">
+      <DependentUpon>frmEdicaoMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdicaoVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdicaoVendas.Designer.cs">
+      <DependentUpon>frmEdicaoVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLixeiraCarros.cs">
       <SubType>Form</SubType>
@@ -92,11 +111,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAlteracaoUsuario.resx">
+      <DependentUpon>frmAlteracaoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCarros.resx">
       <DependentUpon>frmCarros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdicaCarros.resx">
       <DependentUpon>frmEdicaCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdicaoMarcas.resx">
+      <DependentUpon>frmEdicaoMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdicaoVendas.resx">
+      <DependentUpon>frmEdicaoVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLixeiraCarros.resx">
       <DependentUpon>frmLixeiraCarros.cs</DependentUpon>

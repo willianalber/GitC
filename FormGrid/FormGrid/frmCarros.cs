@@ -45,8 +45,7 @@ namespace FormGrid
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var carSelect = ((System.Data.DataRowView)
-                           this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+            var carSelect = ((DataRowView) this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
                            as FormGrid.BancoDeDadosinnerJoinDataSet1.CarrosRow;
 
             switch (e.ColumnIndex)
@@ -60,6 +59,14 @@ namespace FormGrid
                         frmEdicaCarros editCarro = new frmEdicaCarros();
                         editCarro.CarrosRow = carSelect;
                         editCarro.ShowDialog();
+                        this.carrosTableAdapter1.UpdateQuery(editCarro.CarrosRow.Modelo,
+                                                            editCarro.CarrosRow.Ano.ToString(),
+                                                            editCarro.CarrosRow.Marca,
+                                                            editCarro.CarrosRow.Ativo,
+                                                            editCarro.CarrosRow.UsuAlt,
+                                                            DateTime.Now,
+                                                            editCarro.CarrosRow.Id
+                                                            );
                     }break;
             }
             

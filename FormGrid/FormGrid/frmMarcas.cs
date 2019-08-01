@@ -26,8 +26,7 @@ namespace FormGrid
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var marcasSelect = ((System.Data.DataRowView)
-                           this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+            var marcasSelect = ((DataRowView)this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
                            as FormGrid.BancoDeDadosinnerJoinDataSet1.MarcasRow;
 
             switch (e.ColumnIndex)
@@ -36,6 +35,15 @@ namespace FormGrid
                     {
                         this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
                     } break;
+                case 1:
+                    {
+                        frmEdicaoMarcas edtMarcas = new frmEdicaoMarcas();
+                        edtMarcas.linhaDaTabelaMarcas = marcasSelect;
+                        edtMarcas.ShowDialog();
+                        this.marcasTableAdapter.Update(edtMarcas.linhaDaTabelaMarcas);                
+
+
+                    }break;
             }
             
             this.marcasTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Marcas);

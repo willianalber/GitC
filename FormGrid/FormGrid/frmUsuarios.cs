@@ -38,8 +38,20 @@ namespace FormGrid
                     {
                         this.usuariosTableAdapter.DeleteQuery(usuariosSelect.Id);
                     }break;
+                case 1:
+                    {
+                        frmAlteracaoUsuario editUsuario = new frmAlteracaoUsuario();
+                        editUsuario.linhaDaabelaUsuario = usuariosSelect;
+                        editUsuario.ShowDialog();
+                        this.usuariosTableAdapter.Update(editUsuario.linhaDaabelaUsuario);
+                    }break;
             }
             this.usuariosTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Usuarios);
+        }
+
+        private void BtnAdcionar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

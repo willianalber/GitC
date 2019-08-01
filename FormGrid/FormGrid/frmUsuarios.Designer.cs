@@ -31,7 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
+            this.usuariosTableAdapter = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
+            this.btnAdcionar = new System.Windows.Forms.Button();
             this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -39,10 +44,6 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
-            this.usuariosTableAdapter = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
-            this.btnAdcionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).BeginInit();
@@ -54,6 +55,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Deletar,
+            this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
@@ -70,6 +72,31 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.bancoDeDadosinnerJoinDataSet1;
+            // 
+            // bancoDeDadosinnerJoinDataSet1
+            // 
+            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
+            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnAdcionar
+            // 
+            this.btnAdcionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdcionar.BackgroundImage")));
+            this.btnAdcionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdcionar.Location = new System.Drawing.Point(12, 12);
+            this.btnAdcionar.Name = "btnAdcionar";
+            this.btnAdcionar.Size = new System.Drawing.Size(106, 82);
+            this.btnAdcionar.TabIndex = 4;
+            this.btnAdcionar.UseVisualStyleBackColor = true;
+            this.btnAdcionar.Click += new System.EventHandler(this.BtnAdcionar_Click);
+            // 
             // Deletar
             // 
             this.Deletar.DataPropertyName = "DeletCommand";
@@ -79,6 +106,17 @@
             this.Deletar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Deletar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Deletar.Width = 125;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -138,30 +176,6 @@
             this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.bancoDeDadosinnerJoinDataSet1;
-            // 
-            // bancoDeDadosinnerJoinDataSet1
-            // 
-            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
-            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnAdcionar
-            // 
-            this.btnAdcionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdcionar.BackgroundImage")));
-            this.btnAdcionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdcionar.Location = new System.Drawing.Point(12, 12);
-            this.btnAdcionar.Name = "btnAdcionar";
-            this.btnAdcionar.Size = new System.Drawing.Size(106, 82);
-            this.btnAdcionar.TabIndex = 4;
-            this.btnAdcionar.UseVisualStyleBackColor = true;
-            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,7 +198,9 @@
         private BancoDeDadosinnerJoinDataSet1 bancoDeDadosinnerJoinDataSet1;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private BancoDeDadosinnerJoinDataSet1TableAdapters.UsuariosTableAdapter usuariosTableAdapter;
+        private System.Windows.Forms.Button btnAdcionar;
         private System.Windows.Forms.DataGridViewButtonColumn Deletar;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
@@ -192,6 +208,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnAdcionar;
     }
 }

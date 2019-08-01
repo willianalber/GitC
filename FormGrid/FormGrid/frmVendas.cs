@@ -36,6 +36,15 @@ namespace FormGrid
                     {
                         this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
                     } break;
+                case 1:
+                    {
+                        frmEdicaoVendas vendasEdicao = new frmEdicaoVendas();
+                        vendasEdicao.linhaDeVendas = vendasSelect;
+                        vendasEdicao.ShowDialog();
+                        this.vendasTableAdapter.Update(vendasEdicao.linhaDeVendas);
+                    }break;
+
+
             }
             this.vendasTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Vendas);
         }

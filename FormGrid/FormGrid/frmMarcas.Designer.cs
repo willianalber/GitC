@@ -31,7 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarcas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAdcionar = new System.Windows.Forms.Button();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
+            this.marcasTableAdapter = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.MarcasTableAdapter();
             this.deletCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -39,10 +44,6 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
-            this.marcasTableAdapter = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.MarcasTableAdapter();
-            this.btnAdcionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).BeginInit();
@@ -54,6 +55,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deletCommandDataGridViewTextBoxColumn,
+            this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
@@ -70,6 +72,30 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // btnAdcionar
+            // 
+            this.btnAdcionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdcionar.BackgroundImage")));
+            this.btnAdcionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdcionar.Location = new System.Drawing.Point(12, 12);
+            this.btnAdcionar.Name = "btnAdcionar";
+            this.btnAdcionar.Size = new System.Drawing.Size(106, 82);
+            this.btnAdcionar.TabIndex = 3;
+            this.btnAdcionar.UseVisualStyleBackColor = true;
+            // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "Marcas";
+            this.marcasBindingSource.DataSource = this.bancoDeDadosinnerJoinDataSet1;
+            // 
+            // bancoDeDadosinnerJoinDataSet1
+            // 
+            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
+            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // marcasTableAdapter
+            // 
+            this.marcasTableAdapter.ClearBeforeFill = true;
+            // 
             // deletCommandDataGridViewTextBoxColumn
             // 
             this.deletCommandDataGridViewTextBoxColumn.DataPropertyName = "DeletCommand";
@@ -79,6 +105,17 @@
             this.deletCommandDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.deletCommandDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.deletCommandDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -137,30 +174,6 @@
             this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // marcasBindingSource
-            // 
-            this.marcasBindingSource.DataMember = "Marcas";
-            this.marcasBindingSource.DataSource = this.bancoDeDadosinnerJoinDataSet1;
-            // 
-            // bancoDeDadosinnerJoinDataSet1
-            // 
-            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
-            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // marcasTableAdapter
-            // 
-            this.marcasTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnAdcionar
-            // 
-            this.btnAdcionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdcionar.BackgroundImage")));
-            this.btnAdcionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdcionar.Location = new System.Drawing.Point(12, 12);
-            this.btnAdcionar.Name = "btnAdcionar";
-            this.btnAdcionar.Size = new System.Drawing.Size(106, 82);
-            this.btnAdcionar.TabIndex = 3;
-            this.btnAdcionar.UseVisualStyleBackColor = true;
-            // 
             // frmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -183,7 +196,9 @@
         private BancoDeDadosinnerJoinDataSet1 bancoDeDadosinnerJoinDataSet1;
         private System.Windows.Forms.BindingSource marcasBindingSource;
         private BancoDeDadosinnerJoinDataSet1TableAdapters.MarcasTableAdapter marcasTableAdapter;
+        private System.Windows.Forms.Button btnAdcionar;
         private System.Windows.Forms.DataGridViewButtonColumn deletCommandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
@@ -191,6 +206,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnAdcionar;
     }
 }

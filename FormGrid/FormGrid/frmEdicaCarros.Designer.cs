@@ -40,6 +40,7 @@
             this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
             this.marcasTableAdapter = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.MarcasTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -115,18 +116,30 @@
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(387, 138);
+            this.button1.Location = new System.Drawing.Point(311, 133);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 53);
             this.button1.TabIndex = 8;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(375, 133);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 55);
+            this.button2.TabIndex = 9;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // frmEdicaCarros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 215);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.dtAno);
@@ -156,5 +169,6 @@
         private System.Windows.Forms.BindingSource marcasBindingSource;
         private BancoDeDadosinnerJoinDataSet1TableAdapters.MarcasTableAdapter marcasTableAdapter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
