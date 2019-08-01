@@ -35,10 +35,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
-            this.btLixeira = new System.Windows.Forms.Button();
-            this.carrosTableAdapter1 = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.CarrosTableAdapter();
             this.deletCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +46,15 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
+            this.btLixeira = new System.Windows.Forms.Button();
+            this.carrosTableAdapter1 = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.CarrosTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdcionar
@@ -64,6 +66,7 @@
             this.btnAdcionar.Size = new System.Drawing.Size(106, 82);
             this.btnAdcionar.TabIndex = 0;
             this.btnAdcionar.UseVisualStyleBackColor = true;
+            this.btnAdcionar.Click += new System.EventHandler(this.BtnAdcionar_Click);
             // 
             // button1
             // 
@@ -119,35 +122,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1304, 359);
+            this.dataGridView1.Size = new System.Drawing.Size(974, 359);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // carrosBindingSource1
-            // 
-            this.carrosBindingSource1.DataMember = "Carros";
-            this.carrosBindingSource1.DataSource = this.bancoDeDadosinnerJoinDataSet1;
-            // 
-            // bancoDeDadosinnerJoinDataSet1
-            // 
-            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
-            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btLixeira
-            // 
-            this.btLixeira.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btLixeira.BackgroundImage")));
-            this.btLixeira.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btLixeira.ImageKey = "(none)";
-            this.btLixeira.Location = new System.Drawing.Point(1226, 12);
-            this.btLixeira.Name = "btLixeira";
-            this.btLixeira.Size = new System.Drawing.Size(79, 82);
-            this.btLixeira.TabIndex = 6;
-            this.btLixeira.UseVisualStyleBackColor = true;
-            this.btLixeira.Click += new System.EventHandler(this.BtLixeira_Click);
-            // 
-            // carrosTableAdapter1
-            // 
-            this.carrosTableAdapter1.ClearBeforeFill = true;
             // 
             // deletCommandDataGridViewTextBoxColumn
             // 
@@ -241,13 +218,50 @@
             this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
+            // carrosBindingSource1
+            // 
+            this.carrosBindingSource1.DataMember = "Carros";
+            this.carrosBindingSource1.DataSource = this.bancoDeDadosinnerJoinDataSet1;
+            // 
+            // bancoDeDadosinnerJoinDataSet1
+            // 
+            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
+            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btLixeira
+            // 
+            this.btLixeira.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btLixeira.BackgroundImage")));
+            this.btLixeira.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLixeira.ImageKey = "(none)";
+            this.btLixeira.Location = new System.Drawing.Point(1204, 22);
+            this.btLixeira.Name = "btLixeira";
+            this.btLixeira.Size = new System.Drawing.Size(79, 82);
+            this.btLixeira.TabIndex = 6;
+            this.btLixeira.UseVisualStyleBackColor = true;
+            this.btLixeira.Click += new System.EventHandler(this.BtLixeira_Click);
+            // 
+            // carrosTableAdapter1
+            // 
+            this.carrosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1027, 289);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 197);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmCarros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 498);
-            this.Controls.Add(this.btLixeira);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btLixeira);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -258,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,6 +299,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

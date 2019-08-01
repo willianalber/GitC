@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdicaoVendas));
             this.cbCarro = new System.Windows.Forms.ComboBox();
+            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,11 +40,9 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
-            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
-            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carrosTableAdapter = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.CarrosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbCarro
@@ -55,6 +55,16 @@
             this.cbCarro.Size = new System.Drawing.Size(310, 24);
             this.cbCarro.TabIndex = 0;
             this.cbCarro.ValueMember = "Id";
+            // 
+            // carrosBindingSource
+            // 
+            this.carrosBindingSource.DataMember = "Carros";
+            this.carrosBindingSource.DataSource = this.bancoDeDadosinnerJoinDataSet1;
+            // 
+            // bancoDeDadosinnerJoinDataSet1
+            // 
+            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
+            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -106,6 +116,7 @@
             this.button1.Size = new System.Drawing.Size(70, 55);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btSalvar
             // 
@@ -117,16 +128,6 @@
             this.btSalvar.TabIndex = 6;
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.BtSalvar_Click);
-            // 
-            // bancoDeDadosinnerJoinDataSet1
-            // 
-            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
-            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carrosBindingSource
-            // 
-            this.carrosBindingSource.DataMember = "Carros";
-            this.carrosBindingSource.DataSource = this.bancoDeDadosinnerJoinDataSet1;
             // 
             // carrosTableAdapter
             // 
@@ -148,8 +149,8 @@
             this.Name = "frmEdicaoVendas";
             this.Text = "Edição de vendas";
             this.Load += new System.EventHandler(this.FrmEdicaoVendas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

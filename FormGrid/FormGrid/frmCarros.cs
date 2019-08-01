@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FormGrid.Adicionar;
 
 namespace FormGrid
 {
@@ -78,6 +79,24 @@ namespace FormGrid
             frmLixeiraCarros lixeira = new frmLixeiraCarros();
             lixeira.ShowDialog();
 
+            this.carrosTableAdapter1.CustomQuery(bancoDeDadosinnerJoinDataSet1.Carros);
+        }
+
+        private void BtnAdcionar_Click(object sender, EventArgs e)
+        {
+            frmAdicionarCarro formAdd = new frmAdicionarCarro();        
+            formAdd.ShowDialog();
+
+            this.carrosTableAdapter1.Insert(
+                formAdd.carrosRow.Modelo,
+                formAdd.carrosRow.Ano,
+                formAdd.carrosRow.Marca,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now);
+            //Atualiza a tabela
             this.carrosTableAdapter1.CustomQuery(bancoDeDadosinnerJoinDataSet1.Carros);
         }
     }

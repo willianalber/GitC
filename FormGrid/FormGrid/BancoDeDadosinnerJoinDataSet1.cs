@@ -7,9 +7,11 @@
     }
 }
 
-namespace FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters {
-    
-    
-    public partial class CarrosTableAdapter {
+namespace FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters
+{
+
+
+    public partial class CarrosTableAdapter
+    {
     }
 }

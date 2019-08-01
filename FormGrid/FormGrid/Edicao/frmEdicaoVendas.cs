@@ -51,5 +51,10 @@ namespace FormGrid
             linhaDeVendas.Valor = decimal.Parse(txtValor.Text);
             this.Close();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -60,6 +60,7 @@
             this.button1.Size = new System.Drawing.Size(70, 55);
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btSalvar
             // 
@@ -82,7 +83,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Name = "frmAlteracaoUsuario";
-            this.Text = "frmAlteracaoUsuario";
+            this.Text = "Alteração de Usuarios";
             this.Load += new System.EventHandler(this.FrmAlteracaoUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
