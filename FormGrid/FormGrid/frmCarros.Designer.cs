@@ -35,8 +35,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
             this.btLixeira = new System.Windows.Forms.Button();
+            this.carrosTableAdapter1 = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.CarrosTableAdapter();
             this.deletCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +50,6 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bancoDeDadosinnerJoinDataSet1 = new FormGrid.BancoDeDadosinnerJoinDataSet1();
-            this.carrosTableAdapter1 = new FormGrid.BancoDeDadosinnerJoinDataSet1TableAdapters.CarrosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDeDadosinnerJoinDataSet1)).BeginInit();
@@ -103,6 +104,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deletCommandDataGridViewTextBoxColumn,
+            this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.modeloDataGridViewTextBoxColumn,
             this.anoDataGridViewTextBoxColumn,
@@ -121,6 +123,16 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // carrosBindingSource1
+            // 
+            this.carrosBindingSource1.DataMember = "Carros";
+            this.carrosBindingSource1.DataSource = this.bancoDeDadosinnerJoinDataSet1;
+            // 
+            // bancoDeDadosinnerJoinDataSet1
+            // 
+            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
+            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btLixeira
             // 
             this.btLixeira.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btLixeira.BackgroundImage")));
@@ -133,6 +145,10 @@
             this.btLixeira.UseVisualStyleBackColor = true;
             this.btLixeira.Click += new System.EventHandler(this.BtLixeira_Click);
             // 
+            // carrosTableAdapter1
+            // 
+            this.carrosTableAdapter1.ClearBeforeFill = true;
+            // 
             // deletCommandDataGridViewTextBoxColumn
             // 
             this.deletCommandDataGridViewTextBoxColumn.DataPropertyName = "DeletCommand";
@@ -142,6 +158,15 @@
             this.deletCommandDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.deletCommandDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.deletCommandDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -216,20 +241,6 @@
             this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // carrosBindingSource1
-            // 
-            this.carrosBindingSource1.DataMember = "Carros";
-            this.carrosBindingSource1.DataSource = this.bancoDeDadosinnerJoinDataSet1;
-            // 
-            // bancoDeDadosinnerJoinDataSet1
-            // 
-            this.bancoDeDadosinnerJoinDataSet1.DataSetName = "BancoDeDadosinnerJoinDataSet1";
-            this.bancoDeDadosinnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carrosTableAdapter1
-            // 
-            this.carrosTableAdapter1.ClearBeforeFill = true;
-            // 
             // frmCarros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,8 +269,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-     //   private BancoDeDadosinnerJoinDataSetTableAdapters.CarrosTableAdapter carrosTableAdapter;
+        private BancoDeDadosinnerJoinDataSet1 bancoDeDadosinnerJoinDataSet1;
+        private System.Windows.Forms.BindingSource carrosBindingSource1;
+        private BancoDeDadosinnerJoinDataSet1TableAdapters.CarrosTableAdapter carrosTableAdapter1;
+        private System.Windows.Forms.Button btLixeira;
         private System.Windows.Forms.DataGridViewButtonColumn deletCommandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
@@ -269,10 +284,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
-        private BancoDeDadosinnerJoinDataSet1 bancoDeDadosinnerJoinDataSet1;
-        private System.Windows.Forms.BindingSource carrosBindingSource1;
-        private BancoDeDadosinnerJoinDataSet1TableAdapters.CarrosTableAdapter carrosTableAdapter1;
-        private System.Windows.Forms.Button btLixeira;
     }
 }
 

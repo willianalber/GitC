@@ -21,5 +21,25 @@ namespace FormGrid
         {
 
         }
+
+        private void FrmCadastrarCarro_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bancoDeDadosinnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
+            this.marcasTableAdapter.Fill(this.bancoDeDadosinnerJoinDataSet1.Marcas);
+
+        }
+
+        private void FillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.marcasTableAdapter.FillBy(this.bancoDeDadosinnerJoinDataSet1.Marcas);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

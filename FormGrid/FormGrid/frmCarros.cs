@@ -54,7 +54,13 @@ namespace FormGrid
                 case 0:
                     {
                         this.carrosTableAdapter1.DeleteQuery(carSelect.Id);
-                    } break;               
+                    } break;
+                case 1:
+                    {
+                        frmEdicaCarros editCarro = new frmEdicaCarros();
+                        editCarro.CarrosRow = carSelect;
+                        editCarro.ShowDialog();
+                    }break;
             }
             
             this.carrosTableAdapter1.CustomQuery(bancoDeDadosinnerJoinDataSet1.Carros);
