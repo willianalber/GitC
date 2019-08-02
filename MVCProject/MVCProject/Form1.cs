@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MVCProject.View;
 
 namespace MVCProject
 {
@@ -16,6 +17,12 @@ namespace MVCProject
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmPrincipal formPrincipal = new frmPrincipal();
+            formPrincipal.ShowDialog();
         }
     }
 }

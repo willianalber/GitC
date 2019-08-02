@@ -67,6 +67,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaBibliotecaDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarAutor.Designer.cs">
+      <DependentUpon>frmAdicionarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAutor.Designer.cs">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEditora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEditora.Designer.cs">
+      <DependentUpon>frmEditora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmGenero.Designer.cs">
+      <DependentUpon>frmGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLivroAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLivroAutor.Designer.cs">
+      <DependentUpon>frmLivroAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLocacao.Designer.cs">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +114,12 @@
     </Compile>
     <Compile Include="View\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLivro.Designer.cs">
+      <DependentUpon>frmLivro.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -91,11 +133,32 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarAutor.resx">
+      <DependentUpon>frmAdicionarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAutor.resx">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEditora.resx">
+      <DependentUpon>frmEditora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmGenero.resx">
+      <DependentUpon>frmGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLivroAutor.resx">
+      <DependentUpon>frmLivroAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLocacao.resx">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLivro.resx">
+      <DependentUpon>frmLivro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
