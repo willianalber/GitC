@@ -86,16 +86,16 @@ namespace FormGrid
         {
             frmAdicionarCarro formAdd = new frmAdicionarCarro();        
             formAdd.ShowDialog();
-
-            this.carrosTableAdapter1.Insert(
-                formAdd.carrosRow.Modelo,
-                formAdd.carrosRow.Ano,
-                formAdd.carrosRow.Marca,
-                true,
-                1,
-                1,
-                DateTime.Now,
-                DateTime.Now);
+            if (formAdd.carrosRow != null)
+                this.carrosTableAdapter1.Insert(
+                    formAdd.carrosRow.Modelo,
+                    formAdd.carrosRow.Ano,
+                    formAdd.carrosRow.Marca,
+                    true,
+                    1,
+                    1,
+                    DateTime.Now,
+                    DateTime.Now);
             //Atualiza a tabela
             this.carrosTableAdapter1.CustomQuery(bancoDeDadosinnerJoinDataSet1.Carros);
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FormGrid.Model;
 
 namespace FormGrid
 {
@@ -19,15 +20,19 @@ namespace FormGrid
 
         public FormGrid.BancoDeDadosinnerJoinDataSet1.VendasRow linhaDeVendas;
 
+        public ClasseVenda objVendas;
+
         private void FrmEdicaoVendas_Load(object sender, EventArgs e)
         {
             
             // TODO: This line of code loads data into the 'bancoDeDadosinnerJoinDataSet1.Carros' table. You can move, or remove it, as needed.
             this.carrosTableAdapter.Fill(this.bancoDeDadosinnerJoinDataSet1.Carros);
-
-            cbCarro.SelectedValue = linhaDeVendas.Carro;
-            txtQuantidade.Text = linhaDeVendas.Quantidade.ToString();
-            txtValor.Text = linhaDeVendas.Valor.ToString();
+            if (linhaDeVendas != null)
+            {
+                cbCarro.SelectedValue = linhaDeVendas.Carro;
+                txtQuantidade.Text = linhaDeVendas.Quantidade.ToString();
+                txtValor.Text = linhaDeVendas.Valor.ToString();
+            }            
 
         }
 
@@ -46,9 +51,22 @@ namespace FormGrid
 
         private void BtSalvar_Click(object sender, EventArgs e)
         {
-            linhaDeVendas.Carro = (int)cbCarro.SelectedValue;
-            linhaDeVendas.Quantidade = int.Parse(txtQuantidade.Text);
-            linhaDeVendas.Valor = decimal.Parse(txtValor.Text);
+            if (linhaDeVendas != null)
+            {
+                linhaDeVendas.Carro = (int)cbCarro.SelectedValue;
+                linhaDeVendas.Quantidade = int.Parse(txtQuantidade.Text);
+                linhaDeVendas.Valor = decimal.Parse(txtValor.Text);
+            }
+            else
+            {
+                this.objVendas = new ClasseVenda();
+                
+                this.objVendas.Carro = (int)cbCarro.SelectedValue;
+                this.objVendas.Quantidade = int.Parse(txtQuantidade.Text);
+                this.objVendas.Valor = decimal.Parse(txtValor.Text);
+            }
+
+
             this.Close();
         }
 

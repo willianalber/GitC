@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FormGrid.Adicionar;
 
 namespace FormGrid
 {
@@ -49,6 +50,15 @@ namespace FormGrid
             this.marcasTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Marcas);
         }
 
-        
+        private void BtnAdcionar_Click(object sender, EventArgs e)
+        {
+            frmAdicionarMarca objMarcas = new frmAdicionarMarca();
+
+            objMarcas.ShowDialog();
+            if (objMarcas.marca.Nome != null)
+                this.marcasTableAdapter.Insert(objMarcas.marca.Nome,true,1,1,DateTime.Now,DateTime.Now);
+
+            this.marcasTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Marcas);
+        }
     }
 }

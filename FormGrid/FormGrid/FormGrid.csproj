@@ -52,6 +52,12 @@
     <Compile Include="Adicionar\frmAdicionarCarro.Designer.cs">
       <DependentUpon>frmAdicionarCarro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar\frmAdicionarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarMarca.Designer.cs">
+      <DependentUpon>frmAdicionarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="BancoDeDadosinnerJoinDataSet1.cs">
       <DependentUpon>BancoDeDadosinnerJoinDataSet1.xsd</DependentUpon>
     </Compile>
@@ -60,7 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BancoDeDadosinnerJoinDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ClasseUsuario.cs" />
+    <Compile Include="Model\ClasseUsuario.cs" />
     <Compile Include="Edicao\frmAlteracaoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,10 +122,15 @@
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Carro.cs" />
+    <Compile Include="Model\ClasseMarca.cs" />
+    <Compile Include="Model\ClasseVenda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Adicionar\frmAdicionarCarro.resx">
       <DependentUpon>frmAdicionarCarro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAdicionarMarca.resx">
+      <DependentUpon>frmAdicionarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edicao\frmAlteracaoUsuario.resx">
       <DependentUpon>frmAlteracaoUsuario.cs</DependentUpon>

@@ -48,5 +48,24 @@ namespace FormGrid
             }
             this.vendasTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Vendas);
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmEdicaoVendas formAddVnda = new frmEdicaoVendas();
+            formAddVnda.Text = "Adicionar uma venda";
+            formAddVnda.ShowDialog();
+            if (formAddVnda.objVendas != null)
+            {
+                this.vendasTableAdapter.Insert(formAddVnda.objVendas.Carro,
+                                                formAddVnda.objVendas.Quantidade,
+                                                formAddVnda.objVendas.Valor, 
+                                                true,
+                                                1,
+                                                1,
+                                                DateTime.Now,
+                                                DateTime.Now);
+            }
+            this.vendasTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Vendas);
+        }
     }
 }

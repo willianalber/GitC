@@ -51,7 +51,12 @@ namespace FormGrid
 
         private void BtnAdcionar_Click(object sender, EventArgs e)
         {
-
+            frmAlteracaoUsuario formUsuario = new frmAlteracaoUsuario();
+            formUsuario.Text = "Cadastro de usuarios";
+            formUsuario.ShowDialog();
+            if (formUsuario.objUsuario.Nome != null)            
+                this.usuariosTableAdapter.Insert(formUsuario.objUsuario.Nome, true, 1, 1, DateTime.Now, DateTime.Now);
+            this.usuariosTableAdapter.CustomQuery(bancoDeDadosinnerJoinDataSet1.Usuarios);
         }
     }
 }
