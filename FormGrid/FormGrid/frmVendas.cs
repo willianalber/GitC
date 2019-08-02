@@ -26,7 +26,7 @@ namespace FormGrid
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var vendasSelect = ((System.Data.DataRowView)
+            var vendasSelect = ((DataRowView)
                            this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
                            as FormGrid.BancoDeDadosinnerJoinDataSet1.VendasRow;
 
