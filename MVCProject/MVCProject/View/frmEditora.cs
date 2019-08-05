@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.View.Adicionar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,18 @@ namespace MVCProject.View
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Editora' table. You can move, or remove it, as needed.
             this.editoraTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Editora);
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarAutor formEditora = new frmAdicionarAutor();
+            formEditora.Text = "Adicionar uma editora";
+            formEditora.ShowDialog();
+            if (formEditora.novoAutor != null)
+            {
+                this.editoraTableAdapter.Insert(formEditora.novoAutor.Nome, formEditora.novoAutor.Descricao);
+            }
+            this.editoraTableAdapter.Fill(sistemaBibliotecaDBDataSet.Editora);
         }
     }
 }

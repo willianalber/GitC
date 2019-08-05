@@ -11,21 +11,27 @@ using MVCProject.Model;
 
 namespace MVCProject.View.Adicionar
 {
-    public partial class frmAdicionarAutor : Form
+    public partial class frmAdicionarUsuario : Form
     {
-        public frmAdicionarAutor()
+        public frmAdicionarUsuario()
         {
             InitializeComponent();
         }
 
-        public Autor novoAutor;
+        public Usuario novoUsuario;
         private void BtOk_Click(object sender, EventArgs e)
         {
-            novoAutor = new Autor();
-            this.novoAutor.Nome = txtNome.Text;
-            this.novoAutor.Descricao = txtDescricao.Text;
-            this.Close();
+            novoUsuario = new Usuario()
+            {
+                Nome = txtNome.Text,
+                Login = txtUsuario.Text,
+                Senha = txtSenha.Text,
+                Email = txtEmail.Text,
+                UsuInc = 2,
+                UsuAlt = 2
+            };
 
+            this.Close();
         }
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="Model\LivroAutor.cs" />
     <Compile Include="Model\Livro.cs" />
     <Compile Include="Model\Locacao.cs" />
+    <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +73,24 @@
     </Compile>
     <Compile Include="View\Adicionar\frmAdicionarAutor.Designer.cs">
       <DependentUpon>frmAdicionarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivro.Designer.cs">
+      <DependentUpon>frmAdicionarLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacao.Designer.cs">
+      <DependentUpon>frmAdicionarLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuario.Designer.cs">
+      <DependentUpon>frmAdicionarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAutor.cs">
       <SubType>Form</SubType>
@@ -135,6 +154,15 @@
     </Compile>
     <EmbeddedResource Include="View\Adicionar\frmAdicionarAutor.resx">
       <DependentUpon>frmAdicionarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLivro.resx">
+      <DependentUpon>frmAdicionarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLocacao.resx">
+      <DependentUpon>frmAdicionarLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarUsuario.resx">
+      <DependentUpon>frmAdicionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAutor.resx">
       <DependentUpon>frmAutor.cs</DependentUpon>

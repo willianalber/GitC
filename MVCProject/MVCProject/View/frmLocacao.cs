@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MVCProject.View.Adicionar;
 
 namespace MVCProject.View
 {
@@ -20,7 +21,28 @@ namespace MVCProject.View
         private void FrmLocacao_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Locacao' table. You can move, or remove it, as needed.
-            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
+            this.locacaoTableAdapter.LocacaoAtiva(this.sistemaBibliotecaDBDataSet.Locacao);
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarLocacao formAddLocacao = new frmAdicionarLocacao();
+            formAddLocacao.ShowDialog();
+            if (formAddLocacao.novaLocacao != null)
+            {
+                locacaoTableAdapter.Insert(formAddLocacao.novaLocacao.Livro,
+                                           formAddLocacao.novaLocacao.Usuario,
+                                            formAddLocacao.novaLocacao.Tipo,
+                                            formAddLocacao.novaLocacao.Devolucao,
+                                            formAddLocacao.novaLocacao.Ativo,
+                                            formAddLocacao.novaLocacao.UsuInc,
+                                            formAddLocacao.novaLocacao.UsuAlt,
+                                            formAddLocacao.novaLocacao.DataInc,
+                                            formAddLocacao.novaLocacao.DataALt);
+            }
+
+            this.locacaoTableAdapter.LocacaoAtiva(this.sistemaBibliotecaDBDataSet.Locacao);
 
         }
     }

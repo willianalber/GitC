@@ -31,9 +31,9 @@ namespace MVCProject.View
             formAdicionarAutor.ShowDialog();
             if (formAdicionarAutor.novoAutor != null)
             {
-                this.autorTableAdapter.Insert(id++,formAdicionarAutor.novoAutor.Nome, formAdicionarAutor.novoAutor.Descricao);
+                this.autorTableAdapter.Insert(formAdicionarAutor.novoAutor.Nome, formAdicionarAutor.novoAutor.Descricao);
             }
-            this.autorTableAdapter.Fill(sistemaBibliotecaDBDataSet.Autor);
+            this.autorTableAdapter.Fill(sistemaBibliotecaDBDataSet.Autor);                      
         }
     }
 }

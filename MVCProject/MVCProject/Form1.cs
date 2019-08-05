@@ -19,10 +19,29 @@ namespace MVCProject
             InitializeComponent();
         }
 
+        int Id;
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmPrincipal formPrincipal = new frmPrincipal();
-            formPrincipal.ShowDialog();
+            
+
+            var result = this.usuarioTableAdapter1.LoginQuery(txtUsuario.Text, txtSenha.Text);
+
+            if (result != null)
+            {
+                Session.user = new Usuario
+                {
+                    Id = (int)result
+                };
+
+                frmPrincipal formPrincipal = new frmPrincipal();
+                formPrincipal.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Senha ou usuario incorreto! Verifique.");
+                //throw new Exception("Fuuuuuuuuuuuuuu!");
+            }
         }
     }
 }

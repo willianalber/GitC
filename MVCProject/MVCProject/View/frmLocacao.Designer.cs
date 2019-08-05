@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLocacao));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.locacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.locacaoTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LocacaoTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.livroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +41,13 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.locacaoTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LocacaoTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locacaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -76,20 +76,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 383);
             this.dataGridView1.TabIndex = 0;
             // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // locacaoBindingSource
-            // 
-            this.locacaoBindingSource.DataMember = "Locacao";
-            this.locacaoBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // locacaoTableAdapter
-            // 
-            this.locacaoTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -105,6 +91,7 @@
             this.livroDataGridViewTextBoxColumn.HeaderText = "Livro";
             this.livroDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.livroDataGridViewTextBoxColumn.Name = "livroDataGridViewTextBoxColumn";
+            this.livroDataGridViewTextBoxColumn.ReadOnly = true;
             this.livroDataGridViewTextBoxColumn.Width = 125;
             // 
             // usuarioDataGridViewTextBoxColumn
@@ -113,6 +100,7 @@
             this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
             this.usuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
             this.usuarioDataGridViewTextBoxColumn.Width = 125;
             // 
             // tipoDataGridViewTextBoxColumn
@@ -121,6 +109,7 @@
             this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.tipoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoDataGridViewTextBoxColumn.Width = 125;
             // 
             // devolucaoDataGridViewTextBoxColumn
@@ -129,6 +118,7 @@
             this.devolucaoDataGridViewTextBoxColumn.HeaderText = "Devolucao";
             this.devolucaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.devolucaoDataGridViewTextBoxColumn.Name = "devolucaoDataGridViewTextBoxColumn";
+            this.devolucaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.devolucaoDataGridViewTextBoxColumn.Width = 125;
             // 
             // ativoDataGridViewCheckBoxColumn
@@ -137,6 +127,7 @@
             this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
             this.ativoDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
+            this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
             this.ativoDataGridViewCheckBoxColumn.Width = 125;
             // 
             // usuIncDataGridViewTextBoxColumn
@@ -145,6 +136,7 @@
             this.usuIncDataGridViewTextBoxColumn.HeaderText = "UsuInc";
             this.usuIncDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.usuIncDataGridViewTextBoxColumn.Name = "usuIncDataGridViewTextBoxColumn";
+            this.usuIncDataGridViewTextBoxColumn.ReadOnly = true;
             this.usuIncDataGridViewTextBoxColumn.Width = 125;
             // 
             // usuAltDataGridViewTextBoxColumn
@@ -153,6 +145,7 @@
             this.usuAltDataGridViewTextBoxColumn.HeaderText = "UsuAlt";
             this.usuAltDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.usuAltDataGridViewTextBoxColumn.Name = "usuAltDataGridViewTextBoxColumn";
+            this.usuAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.usuAltDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataIncDataGridViewTextBoxColumn
@@ -161,6 +154,7 @@
             this.dataIncDataGridViewTextBoxColumn.HeaderText = "DataInc";
             this.dataIncDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dataIncDataGridViewTextBoxColumn.Name = "dataIncDataGridViewTextBoxColumn";
+            this.dataIncDataGridViewTextBoxColumn.ReadOnly = true;
             this.dataIncDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataAltDataGridViewTextBoxColumn
@@ -169,7 +163,22 @@
             this.dataAltDataGridViewTextBoxColumn.HeaderText = "DataAlt";
             this.dataAltDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dataAltDataGridViewTextBoxColumn.Name = "dataAltDataGridViewTextBoxColumn";
+            this.dataAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.dataAltDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // locacaoBindingSource
+            // 
+            this.locacaoBindingSource.DataMember = "Locacao";
+            this.locacaoBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // locacaoTableAdapter
+            // 
+            this.locacaoTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -179,6 +188,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmLocacao
             // 
@@ -192,8 +202,8 @@
             this.Text = "Locação";
             this.Load += new System.EventHandler(this.FrmLocacao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.locacaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
