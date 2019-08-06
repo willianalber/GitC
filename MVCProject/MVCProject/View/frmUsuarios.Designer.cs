@@ -30,7 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgGridUsuarios = new System.Windows.Forms.DataGridView();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.button1 = new System.Windows.Forms.Button();
+            this.usuarioTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.UsuarioTableAdapter();
+            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,22 +47,20 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.button1 = new System.Windows.Forms.Button();
-            this.usuarioTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.UsuarioTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgGridUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtgGridUsuarios
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgGridUsuarios.AllowUserToAddRows = false;
+            this.dtgGridUsuarios.AllowUserToDeleteRows = false;
+            this.dtgGridUsuarios.AutoGenerateColumns = false;
+            this.dtgGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Deletar,
+            this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
             this.loginDataGridViewTextBoxColumn,
@@ -67,14 +71,59 @@
             this.usuAltDataGridViewTextBoxColumn,
             this.dataIncDataGridViewTextBoxColumn,
             this.dataAltDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.usuarioBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(697, 345);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgGridUsuarios.DataSource = this.usuarioBindingSource;
+            this.dtgGridUsuarios.Location = new System.Drawing.Point(0, 78);
+            this.dtgGridUsuarios.Name = "dtgGridUsuarios";
+            this.dtgGridUsuarios.ReadOnly = true;
+            this.dtgGridUsuarios.RowHeadersWidth = 51;
+            this.dtgGridUsuarios.RowTemplate.Height = 24;
+            this.dtgGridUsuarios.Size = new System.Drawing.Size(697, 345);
+            this.dtgGridUsuarios.TabIndex = 0;
+            this.dtgGridUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataMember = "Usuario";
+            this.usuarioBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(2, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(695, 79);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // usuarioTableAdapter
+            // 
+            this.usuarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // Deletar
+            // 
+            this.Deletar.HeaderText = "Deletar";
+            this.Deletar.MinimumWidth = 6;
+            this.Deletar.Name = "Deletar";
+            this.Deletar.ReadOnly = true;
+            this.Deletar.Text = "Deletar";
+            this.Deletar.UseColumnTextForButtonValue = true;
+            this.Deletar.Width = 125;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -166,42 +215,18 @@
             this.dataAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.dataAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataMember = "Usuario";
-            this.usuarioBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(2, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(695, 79);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // usuarioTableAdapter
-            // 
-            this.usuarioTableAdapter.ClearBeforeFill = true;
-            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 423);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgGridUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUsuarios";
             this.Text = "Usuários";
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgGridUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -210,11 +235,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgGridUsuarios;
         private System.Windows.Forms.Button button1;
         private SistemaBibliotecaDBDataSet sistemaBibliotecaDBDataSet;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private SistemaBibliotecaDBDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
+        private System.Windows.Forms.DataGridViewButtonColumn Deletar;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;

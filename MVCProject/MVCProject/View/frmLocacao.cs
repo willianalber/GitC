@@ -45,5 +45,25 @@ namespace MVCProject.View
             this.locacaoTableAdapter.LocacaoAtiva(this.sistemaBibliotecaDBDataSet.Locacao);
 
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var locacaoSelect = ((DataRowView)this.dtLocacao.Rows[e.RowIndex].DataBoundItem).Row
+                           as MVCProject.SistemaBibliotecaDBDataSet.LocacaoRow;
+
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    {
+                        this.locacaoTableAdapter.DeleteQuery(locacaoSelect.Id);
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            locacaoTableAdapter.LocacaoAtiva(sistemaBibliotecaDBDataSet.Locacao);
+        }
     }
 }

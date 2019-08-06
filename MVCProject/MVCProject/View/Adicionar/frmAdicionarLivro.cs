@@ -54,5 +54,11 @@ namespace MVCProject.View.Adicionar
 
             this.Close();
         }
+
+        private void TxtRegistro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
+        }
     }
 }

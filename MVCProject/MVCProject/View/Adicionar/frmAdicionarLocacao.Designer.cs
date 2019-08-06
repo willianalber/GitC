@@ -40,8 +40,11 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dtDevolucao = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.livrosAtivosToolStrip = new System.Windows.Forms.ToolStrip();
+            this.livrosAtivosToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.livroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
+            this.livrosAtivosToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -125,11 +128,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // livrosAtivosToolStrip
+            // 
+            this.livrosAtivosToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.livrosAtivosToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.livrosAtivosToolStripButton});
+            this.livrosAtivosToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.livrosAtivosToolStrip.Name = "livrosAtivosToolStrip";
+            this.livrosAtivosToolStrip.Size = new System.Drawing.Size(112, 25);
+            this.livrosAtivosToolStrip.TabIndex = 7;
+            this.livrosAtivosToolStrip.Text = "livrosAtivosToolStrip";
+            // 
+            // livrosAtivosToolStripButton
+            // 
+            this.livrosAtivosToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.livrosAtivosToolStripButton.Name = "livrosAtivosToolStripButton";
+            this.livrosAtivosToolStripButton.Size = new System.Drawing.Size(92, 22);
+            this.livrosAtivosToolStripButton.Text = "LivrosAtivos";
+            this.livrosAtivosToolStripButton.Click += new System.EventHandler(this.LivrosAtivosToolStripButton_Click);
+            // 
             // frmAdicionarLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 209);
+            this.Controls.Add(this.livrosAtivosToolStrip);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtDevolucao);
             this.Controls.Add(this.comboBox2);
@@ -143,6 +166,8 @@
             this.Load += new System.EventHandler(this.FrmAdicionarLocacao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.livroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
+            this.livrosAtivosToolStrip.ResumeLayout(false);
+            this.livrosAtivosToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +185,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dtDevolucao;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStrip livrosAtivosToolStrip;
+        private System.Windows.Forms.ToolStripButton livrosAtivosToolStripButton;
     }
 }

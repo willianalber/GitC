@@ -21,7 +21,7 @@ namespace MVCProject.View
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Usuario' table. You can move, or remove it, as needed.
-            this.usuarioTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuario);
+            this.usuarioTableAdapter.UsuariosAtivos(this.sistemaBibliotecaDBDataSet.Usuario);
 
         }
 
@@ -35,14 +35,44 @@ namespace MVCProject.View
                     , formAdUsuario.novoUsuario.Login
                     , formAdUsuario.novoUsuario.Senha
                     , formAdUsuario.novoUsuario.Email
-                    , true
+                    , formAdUsuario.novoUsuario.Ativo
                     , formAdUsuario.novoUsuario.UsuInc
                     , formAdUsuario.novoUsuario.UsuAlt
                     , formAdUsuario.novoUsuario.DataInc
                     , formAdUsuario.novoUsuario.DataALt);
             }
 
-            this.usuarioTableAdapter.Fill(sistemaBibliotecaDBDataSet.Usuario);
+            this.usuarioTableAdapter.UsuariosAtivos(sistemaBibliotecaDBDataSet.Usuario);
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var usuarioSelect = ((DataRowView)this.dtgGridUsuarios.Rows[e.RowIndex].DataBoundItem).Row
+                           as MVCProject.SistemaBibliotecaDBDataSet.UsuarioRow;
+                                         
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    {
+                        this.usuarioTableAdapter.DeleteQuery(usuarioSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        frmAdicionarUsuario editUsuario = new frmAdicionarUsuario();
+                        editUsuario.linhaDaTabelaUsuario = usuarioSelect;
+                        editUsuario.Text = "Alteração de usuario";
+                        editUsuario.ShowDialog();
+                        
+                        this.usuarioTableAdapter.Update(editUsuario.linhaDaTabelaUsuario);
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            usuarioTableAdapter.UsuariosAtivos(sistemaBibliotecaDBDataSet.Usuario);
         }
     }
 }

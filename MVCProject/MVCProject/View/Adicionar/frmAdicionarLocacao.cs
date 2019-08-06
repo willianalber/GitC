@@ -27,7 +27,7 @@ namespace MVCProject.View.Adicionar
 
         }
 
-        private void FillByToolStripButton_Click(object sender, EventArgs e)
+        /*private void FillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace MVCProject.View.Adicionar
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
-        }
+        }*/
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -52,6 +52,19 @@ namespace MVCProject.View.Adicionar
             novaLocacao.UsuAlt = Session.user.Id;
 
             this.Close();
+        }
+
+        private void LivrosAtivosToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.livroTableAdapter.LivrosAtivos(this.sistemaBibliotecaDBDataSet.Livro);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

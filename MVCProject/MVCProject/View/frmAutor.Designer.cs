@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAutor));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.autorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.button1 = new System.Windows.Forms.Button();
             this.autorTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.AutorTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,6 +62,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(801, 386);
             this.dataGridView1.TabIndex = 0;
             // 
+            // autorBindingSource
+            // 
+            this.autorBindingSource.DataMember = "Autor";
+            this.autorBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(2, 3);
@@ -71,16 +81,6 @@
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // autorBindingSource
-            // 
-            this.autorBindingSource.DataMember = "Autor";
-            this.autorBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
             // 
             // autorTableAdapter
             // 
@@ -125,8 +125,8 @@
             this.Text = "Autores";
             this.Load += new System.EventHandler(this.FrmAutor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

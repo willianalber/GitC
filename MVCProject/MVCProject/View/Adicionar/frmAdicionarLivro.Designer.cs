@@ -45,8 +45,8 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.cbGenero = new System.Windows.Forms.ComboBox();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.generoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.generoTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.GeneroTableAdapter();
             this.cbEditora = new System.Windows.Forms.ComboBox();
             this.editoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,8 +55,8 @@
             this.txtObservacoes = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editoraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -148,6 +148,7 @@
             this.txtRegistro.Name = "txtRegistro";
             this.txtRegistro.Size = new System.Drawing.Size(317, 22);
             this.txtRegistro.TabIndex = 9;
+            this.txtRegistro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRegistro_KeyPress);
             // 
             // txtTitulo
             // 
@@ -189,15 +190,15 @@
             this.cbGenero.TabIndex = 15;
             this.cbGenero.ValueMember = "Id";
             // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // generoBindingSource
             // 
             this.generoBindingSource.DataMember = "Genero";
             this.generoBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // generoTableAdapter
             // 
@@ -290,8 +291,8 @@
             this.Name = "frmAdicionarLivro";
             this.Text = "Adicionar um Livro.";
             this.Load += new System.EventHandler(this.FrmAdicionarLivro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editoraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

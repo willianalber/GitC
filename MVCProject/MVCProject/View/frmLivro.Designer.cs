@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLivro));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.livroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.button1 = new System.Windows.Forms.Button();
             this.livroTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivroTableAdapter();
             this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +43,14 @@
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletarr = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sinopseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,14 +71,14 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Deletar,
-            this.idDataGridViewTextBoxColumn,
-            this.registroDataGridViewTextBoxColumn,
-            this.tituloDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn,
-            this.descricaoDataGridViewTextBoxColumn,
-            this.iSBNDataGridViewTextBoxColumn,
-            this.generoDataGridViewTextBoxColumn,
+            this.Deletarr,
+            this.idDataGridViewTextBoxColumn1,
+            this.registroDataGridViewTextBoxColumn1,
+            this.tituloDataGridViewTextBoxColumn1,
+            this.tipoDataGridViewTextBoxColumn1,
+            this.descricaoDataGridViewTextBoxColumn1,
+            this.iSBNDataGridViewTextBoxColumn1,
+            this.generoDataGridViewTextBoxColumn1,
             this.editoraDataGridViewTextBoxColumn,
             this.sinopseDataGridViewTextBoxColumn,
             this.observacoesDataGridViewTextBoxColumn,
@@ -89,16 +97,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(4, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(794, 68);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // livroBindingSource
             // 
             this.livroBindingSource.DataMember = "Livro";
@@ -109,6 +107,16 @@
             this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
             this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(794, 68);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // livroTableAdapter
             // 
             this.livroTableAdapter.ClearBeforeFill = true;
@@ -118,7 +126,6 @@
             this.Deletar.HeaderText = "Deletar";
             this.Deletar.MinimumWidth = 6;
             this.Deletar.Name = "Deletar";
-            this.Deletar.ReadOnly = true;
             this.Deletar.Text = "Deletar";
             this.Deletar.UseColumnTextForButtonValue = true;
             this.Deletar.Width = 125;
@@ -129,7 +136,6 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // registroDataGridViewTextBoxColumn
@@ -138,7 +144,6 @@
             this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
             this.registroDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
-            this.registroDataGridViewTextBoxColumn.ReadOnly = true;
             this.registroDataGridViewTextBoxColumn.Width = 125;
             // 
             // tituloDataGridViewTextBoxColumn
@@ -147,7 +152,6 @@
             this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
             this.tituloDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
-            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
             this.tituloDataGridViewTextBoxColumn.Width = 125;
             // 
             // tipoDataGridViewTextBoxColumn
@@ -156,7 +160,6 @@
             this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.tipoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoDataGridViewTextBoxColumn.Width = 125;
             // 
             // descricaoDataGridViewTextBoxColumn
@@ -165,7 +168,6 @@
             this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
             this.descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.descricaoDataGridViewTextBoxColumn.Width = 125;
             // 
             // iSBNDataGridViewTextBoxColumn
@@ -174,7 +176,6 @@
             this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
             this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            this.iSBNDataGridViewTextBoxColumn.ReadOnly = true;
             this.iSBNDataGridViewTextBoxColumn.Width = 125;
             // 
             // generoDataGridViewTextBoxColumn
@@ -183,8 +184,80 @@
             this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
             this.generoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
-            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
             this.generoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Deletarr
+            // 
+            this.Deletarr.HeaderText = "Deletar";
+            this.Deletarr.MinimumWidth = 6;
+            this.Deletarr.Name = "Deletarr";
+            this.Deletarr.ReadOnly = true;
+            this.Deletarr.Text = "Deletar";
+            this.Deletarr.UseColumnTextForButtonValue = true;
+            this.Deletarr.Width = 125;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // registroDataGridViewTextBoxColumn1
+            // 
+            this.registroDataGridViewTextBoxColumn1.DataPropertyName = "Registro";
+            this.registroDataGridViewTextBoxColumn1.HeaderText = "Registro";
+            this.registroDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.registroDataGridViewTextBoxColumn1.Name = "registroDataGridViewTextBoxColumn1";
+            this.registroDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // tituloDataGridViewTextBoxColumn1
+            // 
+            this.tituloDataGridViewTextBoxColumn1.DataPropertyName = "Titulo";
+            this.tituloDataGridViewTextBoxColumn1.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.tituloDataGridViewTextBoxColumn1.Name = "tituloDataGridViewTextBoxColumn1";
+            this.tituloDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tituloDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // tipoDataGridViewTextBoxColumn1
+            // 
+            this.tipoDataGridViewTextBoxColumn1.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn1.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.tipoDataGridViewTextBoxColumn1.Name = "tipoDataGridViewTextBoxColumn1";
+            this.tipoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // descricaoDataGridViewTextBoxColumn1
+            // 
+            this.descricaoDataGridViewTextBoxColumn1.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn1.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.descricaoDataGridViewTextBoxColumn1.Name = "descricaoDataGridViewTextBoxColumn1";
+            this.descricaoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.descricaoDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // iSBNDataGridViewTextBoxColumn1
+            // 
+            this.iSBNDataGridViewTextBoxColumn1.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn1.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.iSBNDataGridViewTextBoxColumn1.Name = "iSBNDataGridViewTextBoxColumn1";
+            this.iSBNDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iSBNDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // generoDataGridViewTextBoxColumn1
+            // 
+            this.generoDataGridViewTextBoxColumn1.DataPropertyName = "Genero";
+            this.generoDataGridViewTextBoxColumn1.HeaderText = "Genero";
+            this.generoDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.generoDataGridViewTextBoxColumn1.Name = "generoDataGridViewTextBoxColumn1";
+            this.generoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.generoDataGridViewTextBoxColumn1.Width = 125;
             // 
             // editoraDataGridViewTextBoxColumn
             // 
@@ -291,6 +364,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn generonomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Deletarr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn registroDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn editoraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sinopseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacoesDataGridViewTextBoxColumn;

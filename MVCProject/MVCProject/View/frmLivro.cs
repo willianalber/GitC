@@ -16,12 +16,16 @@ namespace MVCProject.View
         public frmLivro()
         {
             InitializeComponent();
+
+           /// sistemaBibliotecaDBDataSet.Livro.co
         }
 
         private void Livro_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Livro' table. You can move, or remove it, as needed.
             livroTableAdapter.LivrosAtivos(sistemaBibliotecaDBDataSet.Livro);
+
+            
 
         }
 

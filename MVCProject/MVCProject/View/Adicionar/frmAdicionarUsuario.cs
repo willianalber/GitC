@@ -16,22 +16,39 @@ namespace MVCProject.View.Adicionar
         public frmAdicionarUsuario()
         {
             InitializeComponent();
+
+            
         }
 
         public Usuario novoUsuario;
+
+        public MVCProject.SistemaBibliotecaDBDataSet.UsuarioRow linhaDaTabelaUsuario;
         private void BtOk_Click(object sender, EventArgs e)
         {
+           
+
             novoUsuario = new Usuario()
             {
                 Nome = txtNome.Text,
                 Login = txtUsuario.Text,
                 Senha = txtSenha.Text,
                 Email = txtEmail.Text,
-                UsuInc = 2,
-                UsuAlt = 2
+                UsuInc = 1007,
+                UsuAlt = 1007
             };
 
             this.Close();
+        }
+
+        private void FrmAdicionarUsuario_Load(object sender, EventArgs e)
+        {
+            if (linhaDaTabelaUsuario != null)
+            {
+                txtNome.Text = linhaDaTabelaUsuario.Nome;
+                txtEmail.Text = linhaDaTabelaUsuario.Email;
+                txtSenha.Text = linhaDaTabelaUsuario.Senha;
+                txtUsuario.Text = linhaDaTabelaUsuario.Login;
+            }
         }
     }
 }

@@ -145,6 +145,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAdicionarUsuario";
             this.Text = "Novo Usuario";
+            this.Load += new System.EventHandler(this.FrmAdicionarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
