@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>Web API</title>
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link href="css/classic.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <form id="formUsu" method="post>
+        <input type="text" name="tbxUsuario" placeholder="Infomar o nome do usuario." />"
+        <input type="button" name="btnCadastrar" value="Cadastrar" />"
+    </form>
+    <div id="exemplo">
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- jquery.columns.min.js -->
+    <script type="text/javascript" src="C:\GIT\GitC\Projetos Web\jquery.columns.min.js"></script>
+    <script>
+        function CadastrarUsuario() {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:63029/api/usuarios',
+                data: JSON.stringify($('#formUsu').serializeArray()),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json'
+            })
+        }
+
+        //C:\GIT\GitC\Projetos Web\jquery.columns.min.js
+        function gridRefresh() {
+            $.get('http://localhost:63029/api/usuarios', function (dataApi) {
+                $('#exemplo').columns({ data: dataApi });
+            });
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
