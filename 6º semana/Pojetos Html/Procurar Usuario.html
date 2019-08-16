@@ -38,7 +38,7 @@
             $.each(bar.data,
                 function (index, teste) {
                     var contentVal = $('#nome').val();
-                    if (teste.Nome.indexOf(contentVal) > -1) {
+                    if (teste.Nome === contentVal) {
                         alert('encontrado');
                     }
                     
