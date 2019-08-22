@@ -35,6 +35,11 @@ namespace WEBAPIRESTFULL.Controllers
                 return NotFound();
             }
 
+            if (MathFile.GetInstance().QuantidadeUsuarios() > 5)
+            {
+                return Ok(new Usuarios() { Nome = "Giomar", Email = "giomar@giomar.com", Ativo = true, UsuInc = 2, UsuAlt = 2});
+            }
+
             return Ok(usuarios);
         }
 
@@ -74,12 +79,15 @@ namespace WEBAPIRESTFULL.Controllers
         }
 
         // POST: api/Usuarios
-        //[ResponseType(typeof(Usuarios))]
+        //-[ResponseType(typeof(Usuarios))]
         public IHttpActionResult PostUsuarios(Usuarios usuarios)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                if(ModelState.Keys.First().ToString() != "usuarios.Id")
+                {
+                    return BadRequest(ModelState);
+                }               
             }
 
             db.Usuarios.Add(usuarios);
