@@ -8,8 +8,7 @@ namespace WEBAPIRESTFULL.Models
 
     public partial class BibliotecaContextDB : DbContext
     {
-        public BibliotecaContextDB()
-            : base("name=BibliotecaContextDB")
+        public BibliotecaContextDB() : base("name=BibliotecaContextDB")
         {
         }
 
