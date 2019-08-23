@@ -167,6 +167,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Enums\ValidFields.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,10 +181,13 @@
     <Compile Include="Migrations\201908231318373_RevisaoTabelaUsuarios.Designer.cs">
       <DependentUpon>201908231318373_RevisaoTabelaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908231855304_versao1.0.cs" />
+    <Compile Include="Migrations\201908231855304_versao1.0.Designer.cs">
+      <DependentUpon>201908231855304_versao1.0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextDB.cs" />
     <Compile Include="Models\CustomValidFilds.cs" />
-    <Compile Include="Models\CutomNameValidator.cs" />
     <Compile Include="Models\UserControl.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908231318373_RevisaoTabelaUsuarios.resx">
       <DependentUpon>201908231318373_RevisaoTabelaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908231855304_versao1.0.resx">
+      <DependentUpon>201908231855304_versao1.0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
