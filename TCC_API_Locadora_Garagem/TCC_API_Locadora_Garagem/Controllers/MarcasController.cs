@@ -13,44 +13,44 @@ using TCC_API_Locadora_Garagem.Models;
 
 namespace TCC_API_Locadora_Garagem.Controllers
 {
-    public class TipoVeiculoesController : ApiController
+    public class MarcasController : ApiController
     {
         private ContextDB db = new ContextDB();
 
-        // GET: api/TipoVeiculoes
-        public IQueryable<TipoVeiculo> Getveiculos()
+        // GET: api/Marcas
+        public IQueryable<Marca> Getmarcas()
         {
-            return db.veiculos.Where(x => x.Ativo == true);
+            return db.marcas;
         }
 
-        // GET: api/TipoVeiculoes/5
-        [ResponseType(typeof(TipoVeiculo))]
-        public async Task<IHttpActionResult> GetTipoVeiculo(int id)
+        // GET: api/Marcas/5
+        [ResponseType(typeof(Marca))]
+        public async Task<IHttpActionResult> GetMarca(int id)
         {
-            TipoVeiculo tipoVeiculo = await db.veiculos.FindAsync(id);
-            if (tipoVeiculo == null)
+            Marca marca = await db.marcas.FindAsync(id);
+            if (marca == null)
             {
                 return NotFound();
             }
 
-            return Ok(tipoVeiculo);
+            return Ok(marca);
         }
 
-        // PUT: api/TipoVeiculoes/5
+        // PUT: api/Marcas/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutTipoVeiculo(int id, TipoVeiculo tipoVeiculo)
+        public async Task<IHttpActionResult> PutMarca(int id, Marca marca)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != tipoVeiculo.Id)
+            if (id != marca.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(tipoVeiculo).State = EntityState.Modified;
+            db.Entry(marca).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace TCC_API_Locadora_Garagem.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TipoVeiculoExists(id))
+                if (!MarcaExists(id))
                 {
                     return NotFound();
                 }
@@ -71,36 +71,35 @@ namespace TCC_API_Locadora_Garagem.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/TipoVeiculoes
-        [ResponseType(typeof(TipoVeiculo))]
-        public async Task<IHttpActionResult> PostTipoVeiculo(TipoVeiculo tipoVeiculo)
+        // POST: api/Marcas
+        [ResponseType(typeof(Marca))]
+        public async Task<IHttpActionResult> PostMarca(Marca marca)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.veiculos.Add(tipoVeiculo);
+            db.marcas.Add(marca);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = tipoVeiculo.Id }, tipoVeiculo);
+            return CreatedAtRoute("DefaultApi", new { id = marca.Id }, marca);
         }
 
-        // DELETE: api/TipoVeiculoes/5
-        [ResponseType(typeof(TipoVeiculo))]
-        public async Task<IHttpActionResult> DeleteTipoVeiculo(int id)
+        // DELETE: api/Marcas/5
+        [ResponseType(typeof(Marca))]
+        public async Task<IHttpActionResult> DeleteMarca(int id)
         {
-            TipoVeiculo tipoVeiculo = await db.veiculos.FindAsync(id);
-            if (tipoVeiculo == null)
+            Marca marca = await db.marcas.FindAsync(id);
+            if (marca == null)
             {
                 return NotFound();
             }
 
-            db.veiculos.Find(id).Ativo = false;
-            //db.veiculos.Remove(tipoVeiculo);
+            db.marcas.Remove(marca);
             await db.SaveChangesAsync();
 
-            return Ok(tipoVeiculo);
+            return Ok(marca);
         }
 
         protected override void Dispose(bool disposing)
@@ -112,9 +111,9 @@ namespace TCC_API_Locadora_Garagem.Controllers
             base.Dispose(disposing);
         }
 
-        private bool TipoVeiculoExists(int id)
+        private bool MarcaExists(int id)
         {
-            return db.veiculos.Count(e => e.Id == id) > 0;
+            return db.marcas.Count(e => e.Id == id) > 0;
         }
     }
 }
