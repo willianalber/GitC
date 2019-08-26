@@ -10,9 +10,13 @@ namespace TCC_API_Locadora_Garagem.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
+        [StringLength(500)]
         public string Nome { get; set; }
+        [Required]
+        [StringLength(100)]        
         public string Email { get; set; }
-        public bool TemPcd { get; set; }
-        public bool TrabalhaNoturno { get; set; }
+        public bool TemPcd { get; set; } = false;
+        public bool TrabalhaNoturno { get; set; } = false;
     }
 }

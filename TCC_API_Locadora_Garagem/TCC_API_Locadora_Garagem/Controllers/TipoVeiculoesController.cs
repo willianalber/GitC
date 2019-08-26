@@ -13,21 +13,21 @@ using TCC_API_Locadora_Garagem.Models;
 
 namespace TCC_API_Locadora_Garagem.Controllers
 {
-    public class TiposVeiculosController : ApiController
+    public class TipoVeiculoesController : ApiController
     {
-        private BaseDeDados db = new BaseDeDados();
+        private ContextDB db = new ContextDB();
 
-        // GET: api/TiposVeiculos
-        public IQueryable<TipoVeiculo> GettipoVeiculos()
+        // GET: api/TipoVeiculoes
+        public IQueryable<TipoVeiculo> Getveiculos()
         {
-            return db.tipoVeiculos;
+            return db.veiculos;
         }
 
-        // GET: api/TiposVeiculos/5
+        // GET: api/TipoVeiculoes/5
         [ResponseType(typeof(TipoVeiculo))]
         public async Task<IHttpActionResult> GetTipoVeiculo(int id)
         {
-            TipoVeiculo tipoVeiculo = await db.tipoVeiculos.FindAsync(id);
+            TipoVeiculo tipoVeiculo = await db.veiculos.FindAsync(id);
             if (tipoVeiculo == null)
             {
                 return NotFound();
@@ -36,7 +36,7 @@ namespace TCC_API_Locadora_Garagem.Controllers
             return Ok(tipoVeiculo);
         }
 
-        // PUT: api/TiposVeiculos/5
+        // PUT: api/TipoVeiculoes/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutTipoVeiculo(int id, TipoVeiculo tipoVeiculo)
         {
@@ -71,7 +71,7 @@ namespace TCC_API_Locadora_Garagem.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/TiposVeiculos
+        // POST: api/TipoVeiculoes
         [ResponseType(typeof(TipoVeiculo))]
         public async Task<IHttpActionResult> PostTipoVeiculo(TipoVeiculo tipoVeiculo)
         {
@@ -80,23 +80,23 @@ namespace TCC_API_Locadora_Garagem.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.tipoVeiculos.Add(tipoVeiculo);
+            db.veiculos.Add(tipoVeiculo);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = tipoVeiculo.Id }, tipoVeiculo);
         }
 
-        // DELETE: api/TiposVeiculos/5
+        // DELETE: api/TipoVeiculoes/5
         [ResponseType(typeof(TipoVeiculo))]
         public async Task<IHttpActionResult> DeleteTipoVeiculo(int id)
         {
-            TipoVeiculo tipoVeiculo = await db.tipoVeiculos.FindAsync(id);
+            TipoVeiculo tipoVeiculo = await db.veiculos.FindAsync(id);
             if (tipoVeiculo == null)
             {
                 return NotFound();
             }
 
-            db.tipoVeiculos.Remove(tipoVeiculo);
+            db.veiculos.Remove(tipoVeiculo);
             await db.SaveChangesAsync();
 
             return Ok(tipoVeiculo);
@@ -113,7 +113,7 @@ namespace TCC_API_Locadora_Garagem.Controllers
 
         private bool TipoVeiculoExists(int id)
         {
-            return db.tipoVeiculos.Count(e => e.Id == id) > 0;
+            return db.veiculos.Count(e => e.Id == id) > 0;
         }
     }
 }

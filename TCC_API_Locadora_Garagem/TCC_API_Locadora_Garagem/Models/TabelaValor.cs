@@ -6,12 +6,14 @@ using System.Web;
 
 namespace TCC_API_Locadora_Garagem.Models
 {
-    public class Cor : PropriedadesUteis
+    public class TabelaValor
     {
         [Key]
         public int Id { get; set; }
         [Required]
-        [StringLength(100)]
+        [MaxLength(500)]
         public string Descricao { get; set; }
+        [Required]
+        public Decimal Valor { get; set; }
     }
 }
