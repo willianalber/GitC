@@ -20,9 +20,16 @@ namespace TrabalhoFinalApi.Controllers
         // GET: api/PeriodoLocacaos
         public IQueryable<PeriodoLocacao> GetperiodoLocacaos()
         {
-            return db.periodoLocacaos.Where(x => x.Ativo == true);
+            return db.periodoLocacaos;
         }
 
+        [Route("Api/DisponibilidadePorVeiculo/{prIdVeiculo}")]
+        [HttpGet]
+        public IQueryable<PeriodoLocacao> RetornaDisponibilidadePorVeiculo(int prIdVeiculo)
+        {
+            return db.periodoLocacaos.Where(x => x.IdTipoVeiculo == prIdVeiculo && x.DataFinal > DateTime.Now);
+        }
+             
         // GET: api/PeriodoLocacaos/5
         [ResponseType(typeof(PeriodoLocacao))]
         public async Task<IHttpActionResult> GetPeriodoLocacao(int id)
@@ -73,18 +80,26 @@ namespace TrabalhoFinalApi.Controllers
 
         // POST: api/PeriodoLocacaos
         [ResponseType(typeof(PeriodoLocacao))]
-        public async Task<IHttpActionResult> PostPeriodoLocacao(PeriodoLocacao periodoLocacao)
+        public async Task<IHttpActionResult> PostPeriodoLocacao(int prIdTipoVeiculo, DateTime prDataInicio, DateTime prDataFinal)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+            PeriodoLocacao periodoLocacao = new PeriodoLocacao();
+
+            periodoLocacao.IdTipoVeiculo = prIdTipoVeiculo;
+            periodoLocacao.DataInicio = prDataInicio;
+            periodoLocacao.DataFinal = prDataFinal;
+
             db.periodoLocacaos.Add(periodoLocacao);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = periodoLocacao.Id }, periodoLocacao);
         }
+
+
 
         // DELETE: api/PeriodoLocacaos/5
         [ResponseType(typeof(PeriodoLocacao))]
