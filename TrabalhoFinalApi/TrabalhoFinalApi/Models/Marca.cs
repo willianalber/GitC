@@ -14,7 +14,7 @@ namespace TrabalhoFinalApi.Models
         [Required]
         public int Codigo { get; set; }
         [Required]
-        public string Descricao { get; set; }
+        public string Descricao { get; set; } = "N/A";
 
         /*[ForeignKey("IDTipoVeiculo")]
         public virtual TipoVeiculo TipoVeiculo { get; set; } 

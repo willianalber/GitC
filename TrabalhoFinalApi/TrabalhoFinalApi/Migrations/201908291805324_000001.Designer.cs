@@ -7,13 +7,13 @@ namespace TrabalhoFinalApi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class _00002 : IMigrationMetadata
+    public sealed partial class _000001 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(_00002));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_000001));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908291314181_00002"; }
+            get { return "201908291805324_000001"; }
         }
         
         string IMigrationMetadata.Source

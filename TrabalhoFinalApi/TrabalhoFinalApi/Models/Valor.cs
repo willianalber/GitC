@@ -10,9 +10,7 @@ namespace TrabalhoFinalApi.Models
     public class Valor : PropUteis
     {
         [Key]
-        public int Id { get; set; }
-        [ForeignKey("IdPeriodoLocacao")]
-        public PeriodoLocacao PeriodoLocacao { get; set; }
+        public int Id { get; set; }        
         [Required]
         public int IdPeriodoLocacao { get; set; }
     }

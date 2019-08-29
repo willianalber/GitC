@@ -161,23 +161,23 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ColaboradorsController.cs" />
     <Compile Include="Controllers\CorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocacaosController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ModeloesController.cs" />
     <Compile Include="Controllers\PeriodoLocacaosController.cs" />
     <Compile Include="Controllers\TermoLocacaosController.cs" />
     <Compile Include="Controllers\TipoVeiculoesController.cs" />
+    <Compile Include="Controllers\VeiculoesController.cs" />
+    <Compile Include="Enuns\Situacao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908291312085_00001.cs" />
-    <Compile Include="Migrations\201908291312085_00001.Designer.cs">
-      <DependentUpon>201908291312085_00001.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908291314181_00002.cs" />
-    <Compile Include="Migrations\201908291314181_00002.Designer.cs">
-      <DependentUpon>201908291314181_00002.cs</DependentUpon>
+    <Compile Include="Migrations\201908291805324_000001.cs" />
+    <Compile Include="Migrations\201908291805324_000001.Designer.cs">
+      <DependentUpon>201908291805324_000001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Colaborador.cs" />
@@ -285,11 +285,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908291312085_00001.resx">
-      <DependentUpon>201908291312085_00001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908291314181_00002.resx">
-      <DependentUpon>201908291314181_00002.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908291805324_000001.resx">
+      <DependentUpon>201908291805324_000001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

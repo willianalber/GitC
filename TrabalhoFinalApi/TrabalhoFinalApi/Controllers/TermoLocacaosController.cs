@@ -101,7 +101,7 @@ namespace TrabalhoFinalApi.Controllers
 
             validaTextVigente(termoLocacao);
 
-            //db.termosLocacoes.Add(termoLocacao);
+            db.termosLocacoes.Add(termoLocacao);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = termoLocacao.Id }, termoLocacao);

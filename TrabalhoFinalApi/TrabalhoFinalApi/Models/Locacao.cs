@@ -11,34 +11,21 @@ namespace TrabalhoFinalApi.Models
     {
         [Key]
         public int Id { get; set; }
-
-
-        [ForeignKey("IdVeiculo")]
-        public Veiculo fk_Locacao_Veiculo { get; set; }
+        
         [Required]
         public int IdVeiculo { get; set; }
-
-
-        [ForeignKey("IdPeriodoLocacao")]
-        public PeriodoLocacao fk_Locacao_PeriodoLocacao { get; set; }
+        
         [Required]
         public int IdPeriodoLocacao { get; set; }
-
-
-        [ForeignKey("IdUsuarioLocacao")]
-        public UsuarioLocador fk_Locacao_UsuarioLocacao { get; set; }
+        
         [Required]
-        public int IdUsuarioLocacao { get; set; }
-
-
-        [ForeignKey("IdTermoLocacao")]
-        public TermoLocacao fk_Locacao_TermoLocacao { get; set; }
+        public int IdColaborador { get; set; }
+        
         [Required]
         public int IdTermoLocacao { get; set; }
-
-
-        [ForeignKey("IdSituacao")]
-        public Situacao fk_Locacao_Situacao { get; set; }
+        
+        public bool ResideFora { get; set; } = false;
+        public bool OfereceCarona { get; set; } = false;
         [Required]
         public int IdSituacao { get; set; }
     }

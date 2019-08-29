@@ -12,13 +12,16 @@ namespace TrabalhoFinalApi.Models
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("IdModelo")]
-        public Modelo Modelo { get; set; }
-        public int IdModelo { get; set; }
+        public int Tipo { get; set; }
 
-        [ForeignKey("IdCor")]
-        public Cor Cor { get; set; }
-        public int IdCor { get; set; }
+        public int Colaborador { get; set; }
+
+        public int Marca { get; set; } 
+        public int IdModelo { get; set; } 
+
+
+
+        public int IdCor { get; set; } 
         public string Placa { get; set; }
     }
 }

@@ -11,8 +11,6 @@ namespace TrabalhoFinalApi.Models
     {
         [Key]
         public int Id { get; set; }        
-        [ForeignKey("IdColaborador")]
-        public Colaborador Colaborador { get; set; }
         [Required]
         public int IdColaborador { get; set; }
         public bool ResideFora { get; set; } = false;

@@ -91,6 +91,43 @@ namespace TrabalhoFinalApi.Migrations
 
             context.SaveChanges();
 
+
+            var listaColaborador = new List<Colaborador>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                listaColaborador.Add(new Colaborador() { Nome = $"Fulano Teste{i}",
+                                                         Email = $"fulano{i}@fulano.com",
+                                                         DataNascimento = DateTime.Parse("09/05/1992")});
+            }
+            listaColaborador.Add(new Colaborador()
+            {
+                Nome = "Fulano com PDC",
+                Email = "fulanoComPCD@fulano.com",
+                Pcd = true,
+                DataNascimento = DateTime.Parse("09/05/2003")
+            });
+            listaColaborador.Add(new Colaborador()
+            {
+                Nome = "Fulano TrabalhaNoturno",
+                Email = "fulanoTrabalhaNoturno@fulano.com",
+                TrabalhaNoturno = true,
+                DataNascimento = DateTime.Parse("09/05/2000")
+            });
+
+            foreach (var item in listaColaborador)
+            {
+                context.colaboradors.Add(item);
+            }
+
+            
+            // carga de situações 
+            context.situacaos.Add(new Situacao() { Descricao = "Aguardando aprovação" });
+            context.situacaos.Add(new Situacao() { Descricao = "Lista de espera" });
+            context.situacaos.Add(new Situacao() { Descricao = "Aprovado" });
+
+            context.SaveChanges();
+
         }
     }
 }
