@@ -11,9 +11,9 @@ namespace TrabalhoFinalApi.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        
         [ForeignKey("IdTipoVeiculo")]
-        public virtual TipoVeiculo TipoVeiculo { get; set; }
+        public TipoVeiculo TipoVeiculo { get; set; }
         public int IdTipoVeiculo { get; set; }
         [Required]
         public DateTime DataInicio { get; set; } = DateTime.Now;

@@ -9,8 +9,8 @@ namespace TrabalhoFinalApi.Models
 {
     public class Marca : PropUteis
     {
-       // [Key]
-       // public int Id { get; set; }
+        [Key]
+        //public int Id { get; set; }
         [Required]
         public int Codigo { get; set; }
         [Required]

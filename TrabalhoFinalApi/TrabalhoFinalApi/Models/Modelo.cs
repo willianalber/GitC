@@ -10,7 +10,7 @@ namespace TrabalhoFinalApi.Models
     public class Modelo : PropUteis
     {
         [Key]
-        public int Id { get; set; }        
+        public int Codigo { get; set; }        
         [Required]
         public string Descricao { get; set; }
         /*[ForeignKey("IDMarca")]

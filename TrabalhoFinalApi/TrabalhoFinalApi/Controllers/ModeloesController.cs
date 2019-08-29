@@ -23,6 +23,7 @@ namespace TrabalhoFinalApi.Controllers
             return db.modelos.Where(x => x.Ativo == true);
         }
 
+        // Get: modelos correspondentes ao codigo da marca 
         [Route("Api/Modelos/CodMarca/{prIdMarca}")]
         [HttpGet]
         public IQueryable<Modelo> ObterModelosPorMarca(int prIdMarca)
@@ -52,7 +53,7 @@ namespace TrabalhoFinalApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != modelo.Id)
+            if (id != modelo.Codigo)
             {
                 return BadRequest();
             }
@@ -90,7 +91,7 @@ namespace TrabalhoFinalApi.Controllers
             db.modelos.Add(modelo);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = modelo.Id }, modelo);
+            return CreatedAtRoute("DefaultApi", new { id = modelo.Codigo }, modelo);
         }
 
         // DELETE: api/Modeloes/5
@@ -121,7 +122,7 @@ namespace TrabalhoFinalApi.Controllers
 
         private bool ModeloExists(int id)
         {
-            return db.modelos.Count(e => e.Id == id) > 0;
+            return db.modelos.Count(e => e.Codigo == id) > 0;
         }
     }
 }

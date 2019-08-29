@@ -165,13 +165,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ModeloesController.cs" />
+    <Compile Include="Controllers\PeriodoLocacaosController.cs" />
+    <Compile Include="Controllers\TermoLocacaosController.cs" />
     <Compile Include="Controllers\TipoVeiculoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908281406333_00001.cs" />
-    <Compile Include="Migrations\201908281406333_00001.Designer.cs">
-      <DependentUpon>201908281406333_00001.cs</DependentUpon>
+    <Compile Include="Migrations\201908291302561_00001.cs" />
+    <Compile Include="Migrations\201908291302561_00001.Designer.cs">
+      <DependentUpon>201908291302561_00001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Colaborador.cs" />
@@ -279,8 +281,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908281406333_00001.resx">
-      <DependentUpon>201908281406333_00001.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908291302561_00001.resx">
+      <DependentUpon>201908291302561_00001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
