@@ -52,9 +52,11 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -171,18 +173,19 @@
     <Compile Include="Controllers\TermoLocacaosController.cs" />
     <Compile Include="Controllers\TipoVeiculoesController.cs" />
     <Compile Include="Controllers\VeiculoesController.cs" />
-    <Compile Include="Enuns\Situacao.cs" />
+    <Compile Include="Enuns\EnumValida.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908291805324_000001.cs" />
-    <Compile Include="Migrations\201908291805324_000001.Designer.cs">
-      <DependentUpon>201908291805324_000001.cs</DependentUpon>
+    <Compile Include="Migrations\201908292230541_0000001.cs" />
+    <Compile Include="Migrations\201908292230541_0000001.Designer.cs">
+      <DependentUpon>201908292230541_0000001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Colaborador.cs" />
     <Compile Include="Models\ContextDb.cs" />
     <Compile Include="Models\Cor.cs" />
+    <Compile Include="Models\CustomValidFilds.cs" />
     <Compile Include="Models\Locacao.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
@@ -285,8 +288,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908291805324_000001.resx">
-      <DependentUpon>201908291805324_000001.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908292230541_0000001.resx">
+      <DependentUpon>201908292230541_0000001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

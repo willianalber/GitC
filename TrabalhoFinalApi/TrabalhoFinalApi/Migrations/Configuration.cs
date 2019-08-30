@@ -35,14 +35,14 @@ namespace TrabalhoFinalApi.Migrations
             // Setup inicial de marcas
             List<Marca> listaMarca = new List<Marca>();
 
-            listaMarca = Planilha.RetornaListaMarcasPlanilha("C:\\GIT\\GitC\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\MarcasVeiculos.csv", 1);
+            listaMarca = Planilha.RetornaListaMarcasPlanilha("C:\\Users\\kiki\\Documents\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\MarcasVeiculos.csv", 1);
 
             foreach (var item in listaMarca)
             {
                 context.marcas.Add(item);
             }
 
-            listaMarca = Planilha.RetornaListaMarcasPlanilha("C:\\GIT\\GitC\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\MarcaMotos.csv", 2);
+            listaMarca = Planilha.RetornaListaMarcasPlanilha("C:\\Users\\kiki\\Documents\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\MarcaMotos.csv", 2);
 
             foreach (var item in listaMarca)
             {
@@ -54,14 +54,14 @@ namespace TrabalhoFinalApi.Migrations
 
             var listaModelo = new List<Modelo>();
 
-            listaModelo = Planilha.RetornaListaModeloPlanilha("C:\\GIT\\GitC\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\ModeloVeiculos.csv",1);
+            listaModelo = Planilha.RetornaListaModeloPlanilha("C:\\Users\\kiki\\Documents\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\ModeloVeiculos.csv", 1);
 
             foreach (var item in listaModelo)
             {
                 context.modelos.Add(item);
             }
 
-            listaModelo = Planilha.RetornaListaModeloPlanilha("C:\\GIT\\GitC\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\ModeloMotos.csv",2);
+            listaModelo = Planilha.RetornaListaModeloPlanilha("C:\\Users\\kiki\\Documents\\TrabalhoFinalApi\\TrabalhoFinalApi\\Arquivos\\ModeloMotos.csv", 2);
 
             foreach (var item in listaModelo)
             {

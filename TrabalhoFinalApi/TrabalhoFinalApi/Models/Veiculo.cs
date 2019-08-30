@@ -22,6 +22,7 @@ namespace TrabalhoFinalApi.Models
 
 
         public int IdCor { get; set; } 
+        [CustomValidFilds(Enuns.EnumValida.validaPlaca)]
         public string Placa { get; set; }
     }
 }

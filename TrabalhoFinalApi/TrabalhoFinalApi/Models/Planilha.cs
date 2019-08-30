@@ -19,15 +19,15 @@ namespace TrabalhoFinalApi.Models
             
             while (!reader.EndOfStream)
             {
-                string line = reader.ReadLine();
-                if (!String.IsNullOrWhiteSpace(line))
+                string linha = reader.ReadLine();
+                if (!String.IsNullOrWhiteSpace(linha))
                 {
-                    string[] values = line.Split(';');
+                    string[] valor = linha.Split(';');
 
 
-                    if (values.Length > 1)
+                    if (valor.Length > 1)
                     {
-                        listaMarca.Add(new Marca() { Codigo = int.Parse(values[0]), Descricao = values[1], IDTipoVeiculo = IdTipoVeiculo });
+                        listaMarca.Add(new Marca() { Codigo = int.Parse(valor[0]), Descricao = valor[1], IDTipoVeiculo = IdTipoVeiculo });
                                         
                     }                    
                 }

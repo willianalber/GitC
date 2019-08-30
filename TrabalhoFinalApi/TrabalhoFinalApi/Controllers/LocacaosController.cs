@@ -11,6 +11,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using TrabalhoFinalApi.Models;
 using TrabalhoFinalApi.Enuns;
+using System.ComponentModel.DataAnnotations;
 
 namespace TrabalhoFinalApi.Controllers
 {
@@ -82,7 +83,7 @@ namespace TrabalhoFinalApi.Controllers
         }
         // POST: api/Locacaos
         [ResponseType(typeof(Locacao))]
-        public async Task<IHttpActionResult> PostLocacao(int prTipoVeiculo, int prPeriodo, int prColaborador, int prTermo, int prMarca = 0, int prModelo = 0, int prCor = 0, string prPlaca = "", bool prCarona = false, bool prOutraCidade = false)
+        public async Task<IHttpActionResult> PostLocacao(int prTipoVeiculo, int prPeriodo, int prColaborador, bool prTermo, int prMarca = 0, int prModelo = 0, int prCor = 0, string prPlaca = "", bool prCarona = false, bool prOutraCidade = false)
         {
             if (!ModelState.IsValid)
             {
@@ -93,6 +94,12 @@ namespace TrabalhoFinalApi.Controllers
             
             
             Veiculo veiculo = new Veiculo() { Colaborador = prColaborador, IdCor = prCor, Marca = prMarca, IdModelo = prModelo, Placa = prPlaca };
+            var TermoAtivo = db.termosLocacoes.FirstOrDefault(x => x.Ativo == true);
+            
+            if (!prTermo)
+            {
+                return NotFound();
+            }
 
             if (!veiculoPost.PostVeiculo(veiculo).IsCompleted)
             {
@@ -102,7 +109,7 @@ namespace TrabalhoFinalApi.Controllers
                     IdColaborador = prColaborador,
                     IdVeiculo = idV,
                     IdPeriodoLocacao = prPeriodo,
-                    IdTermoLocacao = prTermo,
+                    IdTermoLocacao = TermoAtivo.Id,
                     OfereceCarona = prCarona,
                     ResideFora = prOutraCidade,
                     IdSituacao = 1
